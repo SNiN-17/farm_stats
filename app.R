@@ -1,3 +1,4 @@
+# NPB_farm_app_170916.R
 # NPBの一軍と二軍の個人成績を表示するshiny app
 library(shiny)
 library(readr)
