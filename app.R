@@ -20,7 +20,7 @@ career_bat <- dplyr::summarise(group_by(bat, Player_name, T, Level),
                                BBpct = weighted.mean(BBpct, PA),
                                BABIP =weighted.mean(BABIP, BABIP_denom),
                                AVG = weighted.mean(AVG, AB),
-                               wOBA = weighted.mean(wOBA, PA)) %>%
+                               wOBA = weighted.mean(wOBA, wOBA_denom)) %>%
   mutate(K_BB = Kpct -BBpct)
 career_bat$ID <- paste(career_bat$Player_name, career_bat$T)
 names(career_bat)[10] <- "overall"
