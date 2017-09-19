@@ -53,7 +53,7 @@ ui <- fluidPage(
     sidebarPanel(
       p("データはNPB公式から. 2012年以後の1, 2軍での個人成績比較. データは17/9/17時点で更新されていたもの. 曲線は局所的な重み付け回帰."),
       p("上のタブでstatsの種類を選べる. XXX_Lは名前ラベルあり. ラベルをつけるときは下のスライドバーを大きめ(500以上など)にしておかないと、ラベルに埋め尽くされるので注意."),
-
+      
       # Input: Selector for choosing dataset ----
       selectInput(inputId = "dataset",
                   label = "データタイプ:",
@@ -381,7 +381,7 @@ server <- function(input, output) {
                        point.padding = unit(0.1,"lines"),
                        segment.color='grey70') +
       labs(title = "2軍BABIP/DER vs 1軍BABIP/DER",
-           subtitle = "赤の破線はx = y; 野手はBABIP, 投手は簡易版DER (失策を考慮していない).",
+           subtitle = "赤の破線はx = y; 野手はBABIP, 投手は簡易版DER (失策などを考慮していない).",
            caption = "Source: NPB公式 (2012年以後)", 
            x = "2軍BABIP/DER", y = "1軍BABIP/DER", color = "二軍でのPA/TBF") 
     gg
